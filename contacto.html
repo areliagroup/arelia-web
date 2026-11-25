@@ -111,6 +111,9 @@
     border-color: var(--ink);
     box-shadow: 0 0 0 4px rgba(79, 70, 229, .08);
   }
+  .ct-consent { display: flex; align-items: flex-start; gap: 10px; margin: 4px 0 20px; font-size: 14px; color: var(--ink-2); }
+  .ct-consent input { margin-top: 3px; width: 16px; height: 16px; flex: none; accent-color: var(--ink); }
+  .ct-consent a { color: var(--ink); text-decoration: underline; }
   .ct-radios {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -282,6 +285,11 @@
         <textarea id="ct-message" name="mensaje" data-i18n="ct.f_msg_ph" placeholder="Mercado objetivo, producto, equipo, timeline…"></textarea>
       </div>
 
+      <div class="ct-consent">
+        <input type="checkbox" id="ct-consent" name="acepta_privacidad" value="Sí" required />
+        <label for="ct-consent"><span data-i18n="ct.f_consent_a">He leído y acepto la</span> <a href="privacidad.html" target="_blank" rel="noopener" data-i18n="ct.f_consent_link">Política de Privacidad</a></label>
+      </div>
+
       <button type="submit" class="btn btn-primary btn-lg ct-submit">
         <span data-i18n="ct.f_submit">Enviar mensaje</span>
         <span class="arr">→</span>
@@ -381,9 +389,9 @@
       <div class="footer-col">
         <h5 data-i18n="footer.h_legal">Legal</h5>
         <ul>
-          <li><a href="#" data-i18n="footer.l_terms">Términos</a></li>
-          <li><a href="#" data-i18n="footer.l_privacy">Privacidad</a></li>
-          <li><a href="#" data-i18n="footer.l_legal">Aviso legal</a></li>
+          <li><a href="terminos.html" data-i18n="footer.l_terms">Términos</a></li>
+          <li><a href="privacidad.html" data-i18n="footer.l_privacy">Privacidad</a></li>
+          <li><a href="aviso-legal.html" data-i18n="footer.l_legal">Aviso legal</a></li>
         </ul>
       </div>
     </div>
