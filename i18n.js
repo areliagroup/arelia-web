@@ -160,6 +160,9 @@ window.I18N = {
       back: "← Volver al inicio",
     },
     /* Contact page */
+    legal: {
+      note: "",
+    },
     ct: {
       eyebrow: "Contacto",
       h1: "Empecemos a hablar.",
@@ -174,6 +177,8 @@ window.I18N = {
       f_submit: "Enviar mensaje",
       f_sent: "¡Recibido! Te respondemos pronto.",
       f_error: "No pudimos enviar tu mensaje. Inténtalo de nuevo en unos minutos.",
+      f_consent_a: "He leído y acepto la",
+      f_consent_link: "Política de Privacidad",
       i_repr: "Representación LATAM",
       i_build: "Construcción de producto",
       i_ai: "IA y automatización",
@@ -342,6 +347,9 @@ window.I18N = {
       ],
       back: "← Back to home",
     },
+    legal: {
+      note: "This legal text is available in Spanish only.",
+    },
     ct: {
       eyebrow: "Contact",
       h1: "Let's start talking.",
@@ -356,6 +364,8 @@ window.I18N = {
       f_submit: "Send message",
       f_sent: "Got it! We'll get back to you soon.",
       f_error: "We couldn't send your message. Please try again in a few minutes.",
+      f_consent_a: "I have read and accept the",
+      f_consent_link: "Privacy Policy (in Spanish)",
       i_repr: "LATAM Representation",
       i_build: "Product building",
       i_ai: "AI and automation",
