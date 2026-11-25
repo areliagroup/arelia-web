@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 56" fill="none">
+  <defs>
+    <linearGradient id="ag" x1="8" y1="8" x2="48" y2="48" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#4F46E5"></stop>
+      <stop offset="0.5" stop-color="#7C3AED"></stop>
+      <stop offset="1" stop-color="#FF5A1F"></stop>
+    </linearGradient>
+  </defs>
+  <path d="M28 8 L48 48 L38 48 L28 28 L18 48 L8 48 Z" fill="url(#ag)"></path>
+  <text x="62" y="42" font-family="IBM Plex Sans, Arial, sans-serif" font-size="34" font-weight="600" letter-spacing="-0.85" fill="#0A1628">arelia<tspan fill="#FF5A1F">.</tspan></text>
+</svg>
