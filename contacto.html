@@ -237,22 +237,22 @@
       <p hidden><label>No completar: <input name="bot-field" tabindex="-1" autocomplete="off" /></label></p>
       <div class="ct-row">
         <div class="ct-field">
-          <label data-i18n="ct.f_name">Nombre</label>
-          <input type="text" name="name" required />
+          <label for="ct-name" data-i18n="ct.f_name">Nombre</label>
+          <input type="text" id="ct-name" name="nombre" required />
         </div>
         <div class="ct-field">
-          <label data-i18n="ct.f_company">Empresa</label>
-          <input type="text" name="company" required />
+          <label for="ct-company" data-i18n="ct.f_company">Empresa</label>
+          <input type="text" id="ct-company" name="empresa" required />
         </div>
       </div>
       <div class="ct-row">
         <div class="ct-field">
-          <label data-i18n="ct.f_email">Email corporativo</label>
-          <input type="email" name="email" required />
+          <label for="ct-email" data-i18n="ct.f_email">Email corporativo</label>
+          <input type="email" id="ct-email" name="email" required />
         </div>
         <div class="ct-field">
-          <label data-i18n="ct.f_country">País</label>
-          <select name="country" required>
+          <label for="ct-country" data-i18n="ct.f_country">País</label>
+          <select id="ct-country" name="pais" required>
             <option>Perú</option>
             <option>Colombia</option>
             <option>México</option>
@@ -267,18 +267,19 @@
       </div>
 
       <div class="ct-field">
-        <label data-i18n="ct.f_interest">Estoy interesado en</label>
+        <label for="ct-interest" data-i18n="ct.f_interest">Estoy interesado en</label>
+        <input type="hidden" id="ct-interest" name="interes" value="Representación LATAM" />
         <div class="ct-radios">
-          <input type="radio" name="interest" id="i-repr" value="Representación LATAM" checked /><label for="i-repr" data-i18n="ct.i_repr">Representación LATAM</label>
-          <input type="radio" name="interest" id="i-build" value="Construcción de producto" /><label for="i-build" data-i18n="ct.i_build">Construcción de producto</label>
-          <input type="radio" name="interest" id="i-ai" value="IA y automatización" /><label for="i-ai" data-i18n="ct.i_ai">IA y automatización</label>
-          <input type="radio" name="interest" id="i-other" value="Otro" /><label for="i-other" data-i18n="ct.i_other">Otro</label>
+          <input type="radio" id="i-repr" data-interest value="Representación LATAM" checked /><label for="i-repr" data-i18n="ct.i_repr">Representación LATAM</label>
+          <input type="radio" id="i-build" data-interest value="Construcción de producto" /><label for="i-build" data-i18n="ct.i_build">Construcción de producto</label>
+          <input type="radio" id="i-ai" data-interest value="IA y automatización" /><label for="i-ai" data-i18n="ct.i_ai">IA y automatización</label>
+          <input type="radio" id="i-other" data-interest value="Otro" /><label for="i-other" data-i18n="ct.i_other">Otro</label>
         </div>
       </div>
 
       <div class="ct-field">
-        <label data-i18n="ct.f_msg">Cuéntanos más</label>
-        <textarea name="message" data-i18n="ct.f_msg_ph" placeholder="Mercado objetivo, producto, equipo, timeline…"></textarea>
+        <label for="ct-message" data-i18n="ct.f_msg">Cuéntanos más</label>
+        <textarea id="ct-message" name="mensaje" data-i18n="ct.f_msg_ph" placeholder="Mercado objetivo, producto, equipo, timeline…"></textarea>
       </div>
 
       <button type="submit" class="btn btn-primary btn-lg ct-submit">
@@ -292,6 +293,18 @@
       (function () {
         var form = document.getElementById('ct-form');
         if (!form) return;
+        // Las opciones de interés no tienen "name": así Netlify registra un solo
+        // campo "interes" (oculto) con su propia etiqueta, en vez de usar la
+        // etiqueta de la primera opción como título del campo.
+        var interest = document.getElementById('ct-interest');
+        var radios = form.querySelectorAll('input[data-interest]');
+        radios.forEach(function (r) {
+          r.addEventListener('change', function () {
+            if (!r.checked) return;
+            radios.forEach(function (o) { if (o !== r) o.checked = false; });
+            interest.value = r.value;
+          });
+        });
         form.addEventListener('submit', function (e) {
           e.preventDefault();
           var ok = document.getElementById('ct-success');
