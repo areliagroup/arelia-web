@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Servicios — Arelia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet" />
+
+<link rel="icon" type="image/svg+xml" href="assets/arelia-logo.svg" />
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png" />
+<link rel="apple-touch-icon" href="assets/favicon-192.png" />
+<meta property="og:title" content="Servicios — Arelia | From technology to intelligence" />
+<meta property="og:description" content="Arelia opera, representa y construye tecnología e inteligencia artificial en Latinoamérica. From technology to intelligence." />
+<meta property="og:type" content="website" />
+<link rel="stylesheet" href="styles.css" />
+<style>
+  /* Page-specific */
+  .sv-hero {
+    padding: 100px 0 64px;
+    position: relative;
+  }
+  .sv-hero::before {
+    content: "";
+    position: absolute;
+    inset: -100px 0 auto 0;
+    height: 500px;
+    background:
+      radial-gradient(50% 60% at 20% 30%, rgba(79, 70, 229, .14), transparent 60%),
+      radial-gradient(50% 60% at 80% 40%, rgba(255, 90, 31, .12), transparent 60%);
+    z-index: -1;
+    pointer-events: none;
+  }
+  .sv-hero h1 {
+    margin: 24px 0 24px;
+    font-size: clamp(40px, 6vw, 72px);
+    line-height: 1.04;
+    letter-spacing: -0.03em;
+    font-weight: 500;
+    max-width: 880px;
+  }
+  .sv-hero p.sub {
+    font-size: 19px;
+    color: var(--slate);
+    max-width: 620px;
+    margin: 0;
+  }
+  .sv-back {
+    display: inline-flex;
+    font-family: var(--f-mono);
+    font-size: 12px;
+    color: var(--slate);
+    margin-bottom: 24px;
+    letter-spacing: 0.02em;
+  }
+  .sv-back:hover { color: var(--ink); }
+
+  .sv-block {
+    padding: 80px 0;
+    border-top: 1px solid var(--line);
+  }
+  .sv-block:first-of-type { border-top: 0; }
+  .sv-block-grid {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+  @media (max-width: 900px) {
+    .sv-block-grid { grid-template-columns: 1fr; gap: 32px; }
+  }
+  .sv-block-tag {
+    font-family: var(--f-mono);
+    font-size: 12px;
+    letter-spacing: 0.05em;
+    color: var(--indigo);
+    margin-bottom: 16px;
+  }
+  .sv-block-h {
+    font-size: clamp(28px, 3.5vw, 40px);
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+    font-weight: 500;
+    margin: 0 0 16px;
+  }
+  .sv-block-p {
+    font-size: 16px;
+    color: var(--slate);
+    line-height: 1.55;
+    margin: 0;
+  }
+  .sv-items {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+  }
+  @media (max-width: 720px) { .sv-items { grid-template-columns: 1fr; } }
+  .sv-item {
+    padding: 24px 28px;
+    border-top: 1px solid var(--line);
+    border-left: 1px solid var(--line);
+    transition: background .2s;
+  }
+  .sv-item:hover { background: var(--bg-soft); }
+  .sv-items > .sv-item:nth-child(-n+2) { border-top: 1px solid var(--ink); }
+  @media (max-width: 720px) {
+    .sv-items > .sv-item:nth-child(-n+2) { border-top: 1px solid var(--line); }
+    .sv-items > .sv-item:first-child { border-top: 1px solid var(--ink); }
+  }
+  .sv-item h4 {
+    margin: 0 0 8px;
+    font-size: 17px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .sv-item h4::before {
+    content: counter(svi, decimal-leading-zero);
+    font-family: var(--f-mono);
+    font-size: 11px;
+    color: var(--slate-soft);
+    font-weight: 400;
+    counter-increment: svi;
+  }
+  .sv-items { counter-reset: svi; }
+  .sv-items.svb2 { counter-reset: svi; }
+  .sv-item p {
+    margin: 0;
+    font-size: 14px;
+    color: var(--slate);
+    line-height: 1.5;
+  }
+</style>
+</head>
+<body data-screen-label="Arelia · Servicios">
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="nav-logo" href="index.html"><img src="assets/arelia-lockup.svg" alt="Arelia" /></a>
+    <nav class="nav-links">
+      <a href="servicios.html" data-i18n="nav.services" style="color:var(--ink);">Servicios</a>
+      <a href="index.html#markets" data-i18n="nav.markets">Mercados</a>
+      <a href="index.html#partners" data-i18n="nav.partners">Partners</a>
+      <a href="contacto.html" data-i18n="nav.contact">Contacto</a>
+    </nav>
+    <div class="nav-spacer"></div>
+    <div class="nav-right">
+      <div class="lang-pill" role="group" aria-label="Language">
+        <button data-lang="es" class="is-on">ES</button>
+        <button data-lang="en">EN</button>
+      </div>
+      <a class="btn btn-primary" href="contacto.html"><span data-i18n="nav.cta">Hablemos</span> <span class="arr">→</span></a>
+    </div>
+  </div>
+</header>
+
+<section class="sv-hero">
+  <div class="wrap">
+    <a class="sv-back" href="index.html" data-i18n="sv.back">← Volver al inicio</a>
+    <span class="section-eyebrow" data-i18n="sv.eyebrow">Servicios</span>
+    <h1 data-i18n="sv.h1">Cómo trabajamos contigo.</h1>
+    <p class="sub" data-i18n="sv.sub">
+      Dos prácticas que se complementan: una para empresas que quieren entrar a LATAM,
+      otra para corporativos que quieren transformar su tecnología.
+    </p>
+  </div>
+</section>
+
+<!-- BLOCK 1 — Representación -->
+<section class="sv-block" id="representacion">
+  <div class="wrap">
+    <div class="sv-block-grid">
+      <div>
+        <div class="sv-block-tag" data-i18n="sv.block1_tag">01 · REPRESENTACIÓN LATAM</div>
+        <h2 class="sv-block-h" data-i18n="sv.block1_h">Operación país para empresas tecnológicas globales.</h2>
+        <p class="sv-block-p" data-i18n="sv.block1_p">
+          Reemplazamos la complejidad de armar oficina propia en Perú o Colombia.
+          Operamos tu marca, tu producto y tu equipo desde el primer día.
+        </p>
+      </div>
+      <div class="sv-items">
+        <div class="sv-item"><h4>Go-to-market</h4><p>Estrategia comercial, pricing local, posicionamiento y captura de los primeros clientes.</p></div>
+        <div class="sv-item"><h4>Equipo país</h4><p>Reclutamos, contratamos y dirigimos el equipo bajo nuestra estructura legal.</p></div>
+        <div class="sv-item"><h4>Compliance</h4><p>Manejo regulatorio: SUNAT, INDECOPI, datos personales, contratos.</p></div>
+        <div class="sv-item"><h4>Distribución</h4><p>Canales, partners, importación y logística tecnológica.</p></div>
+        <div class="sv-item"><h4>Soporte</h4><p>Customer success, soporte técnico y operación 24/7 cuando aplica.</p></div>
+        <div class="sv-item"><h4>Reporting</h4><p>Dashboards y reporting mensual transparente para tu HQ.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOCK 2 — Producto e IA -->
+<section class="sv-block" id="producto">
+  <div class="wrap">
+    <div class="sv-block-grid">
+      <div>
+        <div class="sv-block-tag" style="color:var(--orange);" data-i18n="sv.block2_tag">02 · PRODUCTO E IA</div>
+        <h2 class="sv-block-h" data-i18n="sv.block2_h">Construimos y operamos producto digital con IA.</h2>
+        <p class="sv-block-p" data-i18n="sv.block2_p">
+          Para corporativos que necesitan transformar procesos críticos: del discovery a la operación
+          de plataformas con IA aplicada.
+        </p>
+      </div>
+      <div class="sv-items svb2">
+        <div class="sv-item"><h4>Discovery</h4><p>Auditoría tecnológica, mapeo de procesos y oportunidades de automatización.</p></div>
+        <div class="sv-item"><h4>Plataformas</h4><p>Producto SaaS, web y mobile end-to-end con stack moderno.</p></div>
+        <div class="sv-item"><h4>IA aplicada</h4><p>Agentes, RAG, LLMs en producción, computer vision y modelos de ML específicos al dominio.</p></div>
+        <div class="sv-item"><h4>Automatización</h4><p>RPA, workflows inteligentes e integraciones API.</p></div>
+        <div class="sv-item"><h4>Cloud y datos</h4><p>Arquitectura, observabilidad, pipelines y BI.</p></div>
+        <div class="sv-item"><h4>Soporte</h4><p>Operación, evolución continua y capacitación a tu equipo.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="wrap">
+    <div class="cta-box">
+      <div class="cta-box-inner">
+        <h2 data-i18n="cta.h2">Listos para llevar tu tecnología más lejos.</h2>
+        <p data-i18n="cta.sub">Escríbenos: representación, producto, o algo intermedio.</p>
+        <div class="btns">
+          <a class="btn btn-primary btn-lg" href="contacto.html"><span data-i18n="cta.btn1">Empezar conversación</span> <span class="arr">→</span></a>
+          <a class="btn btn-ghost btn-lg" href="index.html"><span data-i18n="sv.back">← Volver al inicio</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a href="index.html" class="footer-lockup"><img src="assets/arelia-lockup-full.svg" alt="Arelia — From technology to intelligence" /></a>
+        <p class="footer-tag" data-i18n="footer.tag">Operador tecnológico LATAM.</p>
+        <div class="footer-addr">
+          <div>ARELIA S.A.C.</div>
+          <div><a href="mailto:info@arelia.com.pe">info@arelia.com.pe</a></div>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5 data-i18n="footer.h_company">Compañía</h5>
+        <ul>
+          <li><a href="servicios.html" data-i18n="footer.l_about">Quiénes somos</a></li>
+          <li><a href="index.html#markets" data-i18n="footer.l_markets">Mercados</a></li>
+          <li><a href="index.html#partners" data-i18n="footer.l_partners">Partners</a></li>
+          <li><a href="contacto.html" data-i18n="footer.l_careers">Trabaja con nosotros</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5 data-i18n="footer.h_services">Servicios</h5>
+        <ul>
+          <li><a href="#representacion" data-i18n="footer.l_repr">Representación LATAM</a></li>
+          <li><a href="#producto" data-i18n="footer.l_build">Construcción de producto</a></li>
+          <li><a href="#producto" data-i18n="footer.l_ai">IA y automatización</a></li>
+          <li><a href="#producto" data-i18n="footer.l_cloud">Cloud y datos</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5 data-i18n="footer.h_legal">Legal</h5>
+        <ul>
+          <li><a href="#" data-i18n="footer.l_terms">Términos</a></li>
+          <li><a href="#" data-i18n="footer.l_privacy">Privacidad</a></li>
+          <li><a href="#" data-i18n="footer.l_legal">Aviso legal</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div data-i18n="footer.copy">© 2026 ARELIA S.A.C. · Constituida en Lima, Perú</div>
+      <div>arelia.com.pe</div>
+    </div>
+  </div>
+</footer>
+
+<script src="i18n.js"></script>
+</body>
+</html>
